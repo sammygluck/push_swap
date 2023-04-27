@@ -12,20 +12,7 @@
 
 #include "push_swap.h"
 
-int	stack_length(node *stack)
-{
-	int	i;
-
-	i = 0;
-	while (stack)
-	{
-		stack = stack->next;
-		i++;
-	}
-	return (i);
-}
-
-void	normalize_stack(node **stack)
+void	normalize_stack(t_node **stack)
 {
 	int	*read_array;
 	int	*write_array;
@@ -41,7 +28,7 @@ void	normalize_stack(node **stack)
 	free(write_array);
 }
 
-int	*stack_to_array(node *head, int stack_len)
+int	*stack_to_array(t_node *head, int stack_len)
 {
 	int	i;
 	int	*array;
@@ -82,9 +69,9 @@ int	*simplify_array(int *read_array, int *write_array, int stack_len)
 	return (write_array);
 }
 
-void	simplify_stack(node **stack, int *array)
+void	simplify_stack(t_node **stack, int *array)
 {
-	node	*current;
+	t_node	*current;
 	int		i;
 
 	current = *stack;

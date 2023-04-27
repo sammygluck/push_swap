@@ -19,51 +19,51 @@
 #include <string.h>
 #include <limits.h>
 
-typedef struct node 
+typedef struct s_node 
 {
 	int	data;
-	struct	node *next;
-} node;
+	struct	s_node *next;
+} t_node;
 
-node *create_node(int data);
-node *stack_a_init(char *string, node **head);
-void begin_insert(node **head, int data);
-void end_insert(node **head, int data);
-void print_list(node *head);
-void free_list(node *head);
-void swap(node **stack);
-void sa(node **stack_a);
-void sb(node **stack_b);
-void ss(node **stack_a, node **stack_b);
-void rotate(node **stack);
-void ra(node **stack);
-void rb(node **stack);
-void rr(node **stack_a, node **stack_b);
-void reverse_rotate(node **stack);
-void rra(node **stack);
-void rrb(node **stack);
-void rrr(node **stack_a, node **stack_b);
-void push(node **stack_a, node **stack_b);
-void pa(node **stack_a, node **stack_b);
-void pb(node **stack_b, node **stack_a);
+t_node *create_node(int data);
+t_node *stack_a_init(char *string, t_node **head);
+void begin_insert(t_node **head, int data);
+void end_insert(t_node **head, int data);
+void print_list(t_node *head);
+void free_list(t_node *head);
+void swap(t_node **stack);
+void sa(t_node **stack_a);
+void sb(t_node **stack_b);
+void ss(t_node **stack_a, t_node **stack_b);
+void rotate(t_node **stack);
+void ra(t_node **stack);
+void rb(t_node **stack);
+void rr(t_node **stack_a, t_node **stack_b);
+void reverse_rotate(t_node **stack);
+void rra(t_node **stack);
+void rrb(t_node **stack);
+void rrr(t_node **stack_a, t_node **stack_b);
+void push(t_node **stack_a, t_node **stack_b);
+void pa(t_node **stack_a, t_node **stack_b);
+void pb(t_node **stack_b, t_node **stack_a);
 int count_numbers(char *string);
 int ft_atoi(const char *str);
-int	is_sorted(node *head);
+int	is_sorted(t_node *head);
 char *ft_strtok(char *str, char delim);
-int find_min(node *head, int *min_idx);
-void move_to_top(node **head, int idx);
-int list_size(node *head);
-void push_swap_algorithm(node **stack_a, node **stack_b);
+int find_min(t_node *head, int *min_idx);
+void move_to_top(t_node **head, int idx);
+int list_size(t_node *head);
+void push_swap_algorithm(t_node **stack_a, t_node **stack_b);
 
-int stack_length(node *stack);
-void normalize_stack(node **stack);
-int *stack_to_array(node *head, int stack_len);
+int stack_length(t_node *stack);
+void normalize_stack(t_node **stack);
+int *stack_to_array(t_node *head, int stack_len);
 int *simplify_array(int *read_array, int *write_array, int stack_len);
-void simplify_stack(node **stack, int *array);
-int find_max(node *stack);
+void simplify_stack(t_node **stack, int *array);
+int find_max(t_node *stack);
 int bit_length(int max);
-void radix(node **stack_a, node **stack_b);
-void algorithms(node **stack_a, node **stack_b);
-int has_duplicates(node **stack);
+void radix(t_node **stack_a, t_node **stack_b);
+void algorithms(t_node **stack_a, t_node **stack_b);
+int has_duplicates(t_node **stack);
 
 #endif

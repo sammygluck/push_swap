@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	algorithms(node **stack_a, node **stack_b)
+void	algorithms(t_node **stack_a, t_node **stack_b)
 {
 	if (is_sorted(*stack_a))
 		return ;

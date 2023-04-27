@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-int	find_max(node *stack)
+int	find_max(t_node *stack)
 {
-	node	*current;
+	t_node	*current;
 	int		max;
 
 	max = 0;
@@ -41,9 +41,9 @@ int	bit_length(int max)
 	return (length);
 }
 
-void	radix(node **stack_a, node **stack_b)
+void	radix(t_node **stack_a, t_node **stack_b)
 {
-	node	*current;
+	t_node	*current;
 	int		max;
 	int		i;
 	int		j;

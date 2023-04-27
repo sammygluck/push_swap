@@ -14,8 +14,8 @@
 
 int	main(int argc, char **argv)
 {
-	node	*stack_a;
-	node	*stack_b;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
 	if (argc < 2)
 		printf("USAGE: %s <\" string of numbers \">\n", argv[0]);

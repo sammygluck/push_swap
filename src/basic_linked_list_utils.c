@@ -12,10 +12,10 @@
 
 #include "push_swap.h"
 
-void free_list(node *head)
+void free_list(t_node *head)
 {
-	node	*current;
-	node	*next_node;
+	t_node	*current;
+	t_node	*next_node;
 
 	current = head;
 	while(current != NULL)
@@ -26,29 +26,29 @@ void free_list(node *head)
 	}
 }
 
-node	*create_node(int data)
+t_node	*create_node(int data)
 {
-	node	*new_node;
+	t_node	*new_node;
 
-	new_node = (node *)malloc(sizeof(node));
+	new_node = (t_node *)malloc(sizeof(t_node));
 	new_node->data = data;
 	new_node->next = NULL;
 	return (new_node);
 }
 
-void	begin_insert(node **head, int data)
+void	begin_insert(t_node **head, int data)
 {
-	node	*new_node;
+	t_node	*new_node;
 
 	new_node = create_node(data);
 	new_node->next = *head;
 	*head = new_node;
 }
 
-void	end_insert(node **head, int data)
+void	end_insert(t_node **head, int data)
 {
-	node	*new_node;
-	node	*current;
+	t_node	*new_node;
+	t_node	*current;
 
 	new_node = create_node(data);
 	if (*head == NULL)
@@ -63,9 +63,9 @@ void	end_insert(node **head, int data)
 	current->next = new_node;
 }
 
-void	print_list(node *head)
+void	print_list(t_node *head)
 {
-	node *current = head;
+	t_node *current = head;
 
 	while (current != NULL)
 	{

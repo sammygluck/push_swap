@@ -12,9 +12,9 @@
 
 #include "push_swap.h"
 
-void	push(node **stack_a, node **stack_b)
+void	push(t_node **stack_a, t_node **stack_b)
 {
-	node	*first;
+	t_node	*first;
 
 	if (!*stack_a)
 		return ;
@@ -24,13 +24,13 @@ void	push(node **stack_a, node **stack_b)
 	*stack_b = first;
 }
 
-void	pa(node **stack_a, node **stack_b)
+void	pa(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_b, stack_a);
 	printf("pa\n");
 }
 
-void	pb(node **stack_a, node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
 	push(stack_a, stack_b);
 	printf("pb\n");

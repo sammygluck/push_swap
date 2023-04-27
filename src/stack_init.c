@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-node	*stack_a_init(char *string, node **head)
+t_node	*stack_a_init(char *string, t_node **head)
 {
 	char	*chars;
 	int		data;
@@ -28,10 +28,10 @@ node	*stack_a_init(char *string, node **head)
 	return (*head);
 }
 
-int	is_sorted(node *head)
+int	is_sorted(t_node *head)
 {
-	node	*current;
-	node	*next_node;
+	t_node	*current;
+	t_node	*next_node;
 
 	if (head == NULL || head->next == NULL)
 		return (1);

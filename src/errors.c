@@ -12,12 +12,12 @@
 
 #include "push_swap.h"
 
-int	has_duplicates(node **stack)
+int	has_duplicates(t_node **stack)
 {
 	int		i;
 	int		j;
-	node	*current_1;
-	node	*current_2;
+	t_node	*current_1;
+	t_node	*current_2;
 
 	i = 0;
 	current_1 = *stack;
