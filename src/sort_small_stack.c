@@ -29,6 +29,23 @@ int     find_min(t_node *stack)
     return (min);
 }
 
+int     find_index_of_value(t_node *stack, int  target)
+{
+    t_node      *current;
+    int     i;
+
+    current = stack;
+    i = 0;
+    while (current)
+    {
+        if(current->data == target)
+            return (i);
+        current = current->next;
+        i++;
+    }
+    return (-1);
+}
+
 int     shortest_way(t_node **stack)
 {
     int     len;
@@ -36,7 +53,7 @@ int     shortest_way(t_node **stack)
 
     len = stack_length(*stack);
     min = find_min(*stack);
-    find_index_min();
+    find_index_of_value();
     if (index < len/2)
         push_through_ra; //i.e. return value to reflect this
     else
