@@ -14,7 +14,15 @@
 
 void	algorithms(t_node **stack_a, t_node **stack_b)
 {
-	if (is_sorted(*stack_a))
+	int		stack_size;
+
+	stack_size = stack_length(*stack_a);	
+	if (is_sorted(*stack_a) || stack_size == 1)
 		return ;
-	radix(stack_a, stack_b);
+	if (stack_size == 2)
+		sa(stack_a);
+	if (stack_size > 2 && < 12)
+		small_stack_sort(stack_a, stack_b);
+	if (stack_size > 12)
+		radix(stack_a, stack_b);
 }

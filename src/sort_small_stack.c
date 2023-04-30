@@ -46,21 +46,52 @@ int     find_index_of_value(t_node *stack, int  target)
     return (-1);
 }
 
-int     shortest_way(t_node **stack)
+int     is_ra_shortest_way(t_node **stack, int value)
 {
     int     len;
     int     min;
+    int     index;
 
     len = stack_length(*stack);
-    min = find_min(*stack);
-    find_index_of_value();
+    min = value;
+    find_index_of_value(*stack, min);
     if (index < len/2)
-        push_through_ra; //i.e. return value to reflect this
+        return (1); 
     else
-        push_through_rra; //i.e. return value to reflect this
+        return (0); 
+}
+
+void    rotate_to_top_through_ra(t_node **stack, int value)
+{
+        if (*stack == NULL)
+            return ;
+        while ((*stack)->data != value)
+            ra(stack);
+}
+
+void    rotate_to_top_through_rra(t_node **stack, int value)
+{
+    if (*stack == NULL)
+        return ;
+    while ((*stack)->data != value)
+        rra(stack);
 }
 
 void	small_stack_sort(t_node **stack_a, t_node **stack_b)
 {
-	
+   int      min;
+
+   while (!is_sorted(*stack_a))
+   {
+        min = find_min(*stack_a);
+        if (is_ra_shortest_way(*stack_a, min))
+            rotate_to_top_through_ra();
+        else 
+            rotate_to_top_through_rra();
+        if (is_sorted(*stack_a))
+            break;
+        pb(stack_b, stack_a);        
+   }
+   while (*stack_b != NULL)
+        pa(stack_a, stack_b);
 }
