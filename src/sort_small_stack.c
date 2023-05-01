@@ -46,15 +46,15 @@ int     find_index_of_value(t_node *stack, int  target)
     return (-1);
 }
 
-int     is_ra_shortest_way(t_node **stack, int value)
+int     is_ra_shortest_way(t_node *stack, int value)
 {
     int     len;
     int     min;
     int     index;
 
-    len = stack_length(*stack);
+    len = stack_length(stack);
     min = value;
-    find_index_of_value(*stack, min);
+    index = find_index_of_value(stack, min);
     if (index < len/2)
         return (1); 
     else
