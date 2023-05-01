@@ -18,10 +18,15 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	if (argc < 2)
+	{
 		printf("USAGE: %s <\" string of numbers \">\n", argv[0]);
-	stack_a = stack_a_init(argv[1], &stack_a);
+		return (1);
+	}
+		
+	stack_a = stack_a_init(argc, argv, &stack_a);
 	stack_b = NULL;
 	algorithms(&stack_a, &stack_b);
 	//print_list(stack_a);
 	//print_list(stack_b);
+	return (0);
 }

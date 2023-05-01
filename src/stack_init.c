@@ -12,7 +12,8 @@
 
 #include "push_swap.h"
 
-t_node	*stack_a_init(char *string, t_node **head)
+
+t_node *two_argument_parser(char *string, t_node **head)
 {
 	char	*chars;
 	int		data;
@@ -26,6 +27,34 @@ t_node	*stack_a_init(char *string, t_node **head)
 		chars = ft_strtok(NULL, ' ');
 	}
 	return (*head);
+}
+
+t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
+{
+	int		i;
+	int		data;
+
+	*head = NULL;
+	i = 1;
+	while (i < argc)
+	{
+		data = ft_atoi(argv[i]);
+		//error check
+		end_insert(head, data);
+	}
+	return (*head);
+}
+
+t_node	*stack_a_init(int argc, char **argv, t_node **head)
+{
+	t_node *stack_a;
+
+	stack_a = NULL;
+	if (argc == 2)
+		stack_a = two_argument_parser(argv[1], head);
+	else
+		stack_a = multiple_argument_parser(argc, argv, head);
+	return (stack_a);
 }
 
 int	is_sorted(t_node *head)
