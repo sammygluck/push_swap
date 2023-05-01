@@ -41,6 +41,7 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 		data = ft_atoi(argv[i]);
 		//error check
 		end_insert(head, data);
+		i++;
 	}
 	return (*head);
 }
