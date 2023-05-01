@@ -81,7 +81,7 @@ int has_duplicates(t_node **stack);
 
 int	find_min(t_node *stack);
 int find_index_of_value(t_node *stack, int target);
-int is_ra_shortest_way(t_node **stack, int value);
+int is_ra_shortest_way(t_node *stack, int value);
 void rotate_to_top_through_ra(t_node **stack, int value);
 void rotate_to_top_through_rra(t_node **stack, int value);
 void small_stack_sort(t_node **stack_a, t_node **stack_b);
