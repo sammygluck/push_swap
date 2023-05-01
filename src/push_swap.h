@@ -27,11 +27,17 @@ typedef struct s_node
 
 // Node functions
 t_node *create_node(int data);
-t_node *stack_a_init(char *string, t_node **head);
 void begin_insert(t_node **head, int data);
 void end_insert(t_node **head, int data);
 void print_list(t_node *head);
 void free_list(t_node *head);
+
+// Stack init
+t_node *stack_a_init(int argc, char **argv, t_node **head);
+t_node *two_argument_parser(char *string, t_node **head);
+t_node *multiple_argument_parser(int argc, char **argv, t_node **head);
+
+
 
 // Algo actions
 void swap(t_node **stack);

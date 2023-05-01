@@ -85,9 +85,9 @@ void	small_stack_sort(t_node **stack_a, t_node **stack_b)
    {
         min = find_min(*stack_a);
         if (is_ra_shortest_way(*stack_a, min))
-            rotate_to_top_through_ra();
+            rotate_to_top_through_ra(stack_a, min);
         else 
-            rotate_to_top_through_rra();
+            rotate_to_top_through_rra(stack_a, min);
         if (is_sorted(*stack_a))
             break;
         pb(stack_b, stack_a);        
