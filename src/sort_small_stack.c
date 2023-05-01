@@ -90,7 +90,7 @@ void	small_stack_sort(t_node **stack_a, t_node **stack_b)
             rotate_to_top_through_rra(stack_a, min);
         if (is_sorted(*stack_a))
             break;
-        pb(stack_b, stack_a);        
+        pb(stack_a, stack_b);        
    }
    while (*stack_b != NULL)
         pa(stack_a, stack_b);
