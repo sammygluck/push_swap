@@ -57,8 +57,10 @@ int	ft_atoi(const char *str)
 int     ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
-        return (1);
-	return (0);
+	{
+		 return (1);
+	}
+    return (0);
 }
 
 int	is_actual_number(const char *str)
@@ -76,7 +78,7 @@ int	is_actual_number(const char *str)
 		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		number = str[i]; //- '0';
+		number = str[i]; 
 		if (!ft_isdigit(number))
 			return (0);
 		if (ft_isdigit(number))
@@ -86,32 +88,30 @@ int	is_actual_number(const char *str)
 	return (return_value);
 }
 
-// int     ft_atoi(const char *str)
-// {
-//         unsigned long int       number;
-//         int                                     i;
-//         int                                     sign;
+int     is_number_within_bounds(const char *str)
+{
+        unsigned long int       number;
+        int                                     i;
+        int                                     sign;
 
-//         i = 0;
-//         number = 0;
-//         sign = 1;
-//         while ((str[i] > 8 && str[i] <= 13) || str[i] == 32)
-//                 i++;
-//         if (str[i] == '-')
-//                 sign *= -1;
-//         if (str[i] == '-' || str[i] == '+')
-//                 i++;
-//         while (str[i] >= '0' && str[i] <= '9')
-//         {
-//                 number = (number * 10) + str[i] - '0';
-//                 if (number > (unsigned)LONG_MAX && sign == -1)
-//                         return (0);
-//                 if (number > (unsigned)LONG_MAX && sign == 1)
-//                         return (-1);
-//                 i++;
-//         }
-//         return ((int)number * sign);
-// }
+        i = 0;
+        number = 0;
+        sign = 1;
+        while ((str[i] > 8 && str[i] <= 13) || str[i] == 32)
+                i++;
+        if (str[i] == '-')
+                sign *= -1;
+        if (str[i] == '-' || str[i] == '+')
+                i++;
+        while (str[i] >= '0' && str[i] <= '9')
+        {
+                number = (number * 10) + str[i] - '0';
+                if ((number > (INT_MAX + 1) && sign == -1) || number > (INT_MAX && sign == 1));
+                        return (0);
+                i++;
+        }
+        return (1);
+}
 
 
 char	*ft_strtok(char *str, char delim)

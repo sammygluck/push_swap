@@ -63,6 +63,7 @@ int	is_sorted(t_node *head);
 char *ft_strtok(char *str, char delim);
 int     ft_isdigit(int c);
 int	is_actual_number(const char *str);
+int     is_number_within_bounds(const char *str);
 
 //int find_min(t_node *head, int *min_idx);
 //void move_to_top(t_node **head, int idx);
