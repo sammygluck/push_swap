@@ -108,7 +108,7 @@ int     is_number_within_bounds(const char *str)
                 number = (number * 10) + str[i] - '0';
                 if ((number > ((unsigned long int)INT_MAX + 1) && sign == -1) || number > ((unsigned long int)INT_MAX && sign == 1))
 				{
-					 printf("this is the number %d \n", number);
+					 printf("this is the number %ld \n", number);
 					 return (0);
 				}
                        
