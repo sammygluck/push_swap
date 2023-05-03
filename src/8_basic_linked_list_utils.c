@@ -31,6 +31,8 @@ t_node	*create_node(int data)
 	t_node	*new_node;
 
 	new_node = (t_node *)malloc(sizeof(t_node));
+	if (!new_node)
+		exit(EXIT_FAILURE);
 	new_node->data = data;
 	new_node->next = NULL;
 	return (new_node);
@@ -56,7 +58,6 @@ void	end_insert(t_node **head, int data)
 		*head = new_node;
 		return ;
 	}
-
 	current = *head;
 	while (current->next != NULL)
 		current = current->next;
