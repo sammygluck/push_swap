@@ -25,7 +25,7 @@ t_node *two_argument_parser(char *string, t_node **head)
 		if (!is_actual_number(chars))
 			printf("The input: <%s> isn't an actual number \n", chars);
 		if (!is_number_within_bounds(chars))
-			printf("The number isn't within bounds");
+			printf("The number <%s> isn't within bounds \n", chars);
 		data = ft_atoi(chars);
 		end_insert(head, data);
 		chars = ft_strtok(NULL, ' ');
@@ -45,7 +45,7 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 		if (!is_actual_number(argv[i]))
 			printf("The input: <%s> isn't an actual number \n", argv[i]);
 		if (!is_number_within_bounds(argv[i]))
-			printf("The number isn't within bounds");
+			printf("The number <%s> isn't within bounds \n", argv[i]);
 		data = ft_atoi(argv[i]);
 		//error check
 		end_insert(head, data);
