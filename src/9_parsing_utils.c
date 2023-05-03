@@ -54,6 +54,65 @@ int	ft_atoi(const char *str)
 	return (number * sign);
 }
 
+int     ft_isdigit(int c)
+{
+	if (c >= '0' && c <= '9')
+        return (1);
+}
+
+int	is_actual_number(const char *str)
+{
+	int	i;
+	int	number;
+	int	return_value;
+
+	i = 0;
+	number = 0;
+	return_value = 0;
+	while ((str[i] > 8 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		number = str[i] - '0';
+		if (!ft_isdigit(number))
+			return (0);
+		if (ft_isdigit(number))
+			return_value = 1;
+		i++;
+	}
+	return (return_value);
+}
+
+// int     ft_atoi(const char *str)
+// {
+//         unsigned long int       number;
+//         int                                     i;
+//         int                                     sign;
+
+//         i = 0;
+//         number = 0;
+//         sign = 1;
+//         while ((str[i] > 8 && str[i] <= 13) || str[i] == 32)
+//                 i++;
+//         if (str[i] == '-')
+//                 sign *= -1;
+//         if (str[i] == '-' || str[i] == '+')
+//                 i++;
+//         while (str[i] >= '0' && str[i] <= '9')
+//         {
+//                 number = (number * 10) + str[i] - '0';
+//                 if (number > (unsigned)LONG_MAX && sign == -1)
+//                         return (0);
+//                 if (number > (unsigned)LONG_MAX && sign == 1)
+//                         return (-1);
+//                 i++;
+//         }
+//         return ((int)number * sign);
+// }
+
+
 char	*ft_strtok(char *str, char delim)
 {
 	static char	*start;

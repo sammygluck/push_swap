@@ -22,11 +22,8 @@ int	main(int argc, char **argv)
 		printf("USAGE: %s <\" string of numbers \">\n", argv[0]);
 		return (1);
 	}
-		
 	stack_a = stack_a_init(argc, argv, &stack_a);
 	stack_b = NULL;
 	algorithms(&stack_a, &stack_b);
-	//print_list(stack_a);
-	//print_list(stack_b);
 	return (0);
 }

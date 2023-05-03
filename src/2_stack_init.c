@@ -22,6 +22,8 @@ t_node *two_argument_parser(char *string, t_node **head)
 	chars = ft_strtok(string, ' ');
 	while (chars)
 	{
+		if (!is_actual_number(chars))
+			printf("The input: <%s> isn't an actual number \n", chars);
 		data = ft_atoi(chars);
 		end_insert(head, data);
 		chars = ft_strtok(NULL, ' ');
@@ -37,7 +39,9 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 	*head = NULL;
 	i = 1;
 	while (i < argc)
-	{
+	{	
+		if (!is_actual_number(argv[i]))
+			printf("The input: <%s> isn't an actual number \n", argv[i]);
 		data = ft_atoi(argv[i]);
 		//error check
 		end_insert(head, data);
@@ -58,20 +62,4 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 	return (stack_a);
 }
 
-int	is_sorted(t_node *head)
-{
-	t_node	*current;
-	t_node	*next_node;
 
-	if (head == NULL || head->next == NULL)
-		return (1);
-	current = head;
-	while (current != NULL)
-	{
-		next_node = current->next;
-		if (next_node != NULL && current->data > next_node->data)
-			return (0);
-		current = next_node;
-	}
-	return (1);
-}

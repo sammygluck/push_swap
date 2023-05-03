@@ -21,6 +21,7 @@ void	normalize_stack(t_node **stack)
 
 	stack_len = stack_length(*stack);
 	read_array = stack_to_array(*stack, stack_len);
+	// if something goes wrong in write array, we must also free read_array
 	write_array = stack_to_array(*stack, stack_len);
 	simplified_array = simplify_array(read_array, write_array, stack_len);
 	simplify_stack(stack, simplified_array);

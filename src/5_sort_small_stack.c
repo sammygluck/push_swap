@@ -12,23 +12,6 @@
 
 #include "push_swap.h"
 
-int     find_min(t_node *stack)
-{
-    //error check needed?
-    int     min;
-    t_node  *current;
-
-    current = stack;
-    min = current->data;
-    while (current)
-    {
-        if (current->data < min)
-            min = current->data;
-        current = current->next;
-    }
-    return (min);
-}
-
 int     find_index_of_value(t_node *stack, int  target)
 {
     t_node      *current;
