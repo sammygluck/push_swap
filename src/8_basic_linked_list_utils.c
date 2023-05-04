@@ -46,7 +46,7 @@ void	begin_insert(t_node **head, int data)
 	if (!new_node)
 	{
 		free_list(*head);
-		//exit
+		exit(EXIT_FAILURE);
 	}
 	new_node->next = *head;
 	*head = new_node;
@@ -61,7 +61,7 @@ void	end_insert(t_node **head, int data)
 	if (!new_node)
 	{
 		free_list(*head);
-		//exit
+		exit(EXIT_FAILURE);
 	}
 	if (*head == NULL)
 	{

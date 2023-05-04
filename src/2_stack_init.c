@@ -43,11 +43,15 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 	while (i < argc)
 	{	
 		if (!is_actual_number(argv[i]))
-			printf("The input: <%s> isn't an actual number \n", argv[i]);
-			//exit with error message
+		{
+			printf("All inputs must be valid digits\n");
+			exit(EXIT_FAILURE);
+		}
 		if (!is_number_within_bounds(argv[i]))
-			printf("The number <%s> isn't within bounds \n", argv[i]);
-			//exit with error message
+		{
+			printf("The input provided was out of bounds\n");
+			exit(EXIT_FAILURE);
+		}
 		data = ft_atoi(argv[i]);
 		end_insert(head, data);
 		i++;
@@ -66,6 +70,11 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 		stack_a = multiple_argument_parser(argc, argv, head);
 
 	//check for duplicates
+	if (has_duplicates(head))
+	{
+		printf("The input has duplicates\n");
+		exit(EXIT_FAILURE);
+	}
 	return (stack_a);
 }
 

@@ -24,14 +24,14 @@ void	normalize_stack(t_node **stack)
 	if (!read_array)
 	{
 		free_list(*stack);
-		// exit program
+		exit(EXIT_FAILURE);
 	}
 	write_array = stack_to_array(*stack, stack_len);
 	if (!write_array)
 	{
 		free(read_array);
 		free_list(*stack);
-		//exit program
+		exit(EXIT_FAILURE);
 	}
 	simplified_array = simplify_array(read_array, write_array, stack_len);
 	simplify_stack(stack, simplified_array);
