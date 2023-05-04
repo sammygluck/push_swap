@@ -18,8 +18,6 @@ void	rotate(t_node **stack)
 	t_node	*second;
 	t_node	*last;
 
-	if (!*stack || !(*stack)->next)
-		return ;
 	first = *stack;
 	second = first->next;
 	last = second;
@@ -32,18 +30,25 @@ void	rotate(t_node **stack)
 
 void	ra(t_node **stack)
 {
+	if (!*stack || !(*stack)->next)
+		return ;
 	rotate(stack);
 	printf("ra\n");
 }
 
 void	rb(t_node **stack)
 {
+	if (!*stack || !(*stack)->next)
+		return ;
 	rotate(stack);
 	printf("rb\n");
 }
 
 void	rr(t_node **stack_a, t_node **stack_b)
 {
-	ra(stack_a);
-	rb(stack_b);
+	if (!*stack_a || !(*stack_a)->next || !*stack_b || !(*stack_b)->next)
+		return ;
+	rotate(stack_a);
+	rotate(stack_b);
+	printf("rr\n");
 }

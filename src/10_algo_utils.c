@@ -34,7 +34,6 @@ int	is_sorted(t_node *head)
 
 int     find_min(t_node *stack)
 {
-    //error check needed?
     int     min;
     t_node  *current;
 

@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	push(t_node **stack_a, t_node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*first;
 
@@ -22,16 +22,18 @@ void	push(t_node **stack_a, t_node **stack_b)
 	*stack_a = first->next;
 	first->next = *stack_b;
 	*stack_b = first;
+	printf("pb\n");
 }
 
 void	pa(t_node **stack_a, t_node **stack_b)
 {
-	push(stack_b, stack_a);
-	printf("pa\n");
-}
+	t_node	*first;
 
-void	pb(t_node **stack_a, t_node **stack_b)
-{
-	push(stack_a, stack_b);
-	printf("pb\n");
+	if (!*stack_b)
+		return ;
+	first = *stack_b;
+	*stack_b = first->next;
+	first->next = *stack_a;
+	*stack_a = first;
+	printf("pa\n");
 }
