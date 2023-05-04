@@ -21,8 +21,18 @@ void	normalize_stack(t_node **stack)
 
 	stack_len = stack_length(*stack);
 	read_array = stack_to_array(*stack, stack_len);
-	// if something goes wrong in write array, we must also free read_array
+	if (!read_array)
+	{
+		free_list(*stack);
+		// exit program
+	}
 	write_array = stack_to_array(*stack, stack_len);
+	if (!write_array)
+	{
+		free(read_array);
+		free_list(*stack);
+		//exit program
+	}
 	simplified_array = simplify_array(read_array, write_array, stack_len);
 	simplify_stack(stack, simplified_array);
 	free(read_array);
@@ -36,7 +46,7 @@ int	*stack_to_array(t_node *head, int stack_len)
 
 	array = malloc(stack_len * sizeof(int));
 	if (!array)
-		exit(EXIT_FAILURE);
+		return (NULL);
 	i = 0;
 	while (head)
 	{

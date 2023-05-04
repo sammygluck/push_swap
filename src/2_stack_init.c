@@ -44,10 +44,11 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 	{	
 		if (!is_actual_number(argv[i]))
 			printf("The input: <%s> isn't an actual number \n", argv[i]);
+			//exit with error message
 		if (!is_number_within_bounds(argv[i]))
 			printf("The number <%s> isn't within bounds \n", argv[i]);
+			//exit with error message
 		data = ft_atoi(argv[i]);
-		//error check
 		end_insert(head, data);
 		i++;
 	}
@@ -63,6 +64,8 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 		stack_a = two_argument_parser(argv[1], head);
 	else
 		stack_a = multiple_argument_parser(argc, argv, head);
+
+	//check for duplicates
 	return (stack_a);
 }
 
