@@ -37,6 +37,7 @@ void free_list(t_node *head);
 t_node *stack_a_init(int argc, char **argv, t_node **head);
 t_node *two_argument_parser(char *string, t_node **head);
 t_node *multiple_argument_parser(int argc, char **argv, t_node **head);
+void	init_error(t_node *head);
 
 
 
