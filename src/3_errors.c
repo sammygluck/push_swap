@@ -30,7 +30,7 @@ int	has_duplicates(t_node **stack)
 			if (i != j && current_1->data == current_2->data)
 				return (1);
 			current_2 = current_2->next;
-			i++;
+			j++;
 		}
 		current_1 = current_1->next;
 		i++;
