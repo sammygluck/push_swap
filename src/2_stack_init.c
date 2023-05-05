@@ -23,15 +23,9 @@ t_node *two_argument_parser(char *string, t_node **head)
 	while (chars)
 	{
 		if (!is_actual_number(chars))
-		{
-			ft_printf("All inputs must be valid digits\n");
-			exit(EXIT_FAILURE);
-		}
+			init_error(*head);
 		if (!is_number_within_bounds(chars))
-		{
-			ft_printf("The input provided was out of bounds\n");
-			exit(EXIT_FAILURE);
-		}
+			init_error(*head);
 		data = ft_atoi(chars);
 		end_insert(head, data);
 		chars = ft_strtok(NULL, ' ');
@@ -49,15 +43,9 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 	while (i < argc)
 	{	
 		if (!is_actual_number(argv[i]))
-		{
-			ft_printf("All inputs must be valid digits\n");
-			exit(EXIT_FAILURE);
-		}
+			init_error(*head);
 		if (!is_number_within_bounds(argv[i]))
-		{
-			ft_printf("The input provided was out of bounds\n");
-			exit(EXIT_FAILURE);
-		}
+			init_error(*head);
 		data = ft_atoi(argv[i]);
 		end_insert(head, data);
 		i++;
@@ -84,4 +72,11 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 	return (stack_a);
 }
 
+void	init_error(t_node *head)
+{
+	ft_printf("error\n");
+	if (head != NULL)
+		free(head);
+	exit(EXIT_FAILURE);
+}
 
