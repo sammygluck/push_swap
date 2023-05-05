@@ -76,7 +76,7 @@ void	init_error(t_node *head)
 {
 	ft_printf("error\n");
 	if (head != NULL)
-		free(head);
+		free_list(head);
 	exit(EXIT_FAILURE);
 }
 
