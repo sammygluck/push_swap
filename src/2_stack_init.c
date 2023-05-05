@@ -23,9 +23,15 @@ t_node *two_argument_parser(char *string, t_node **head)
 	while (chars)
 	{
 		if (!is_actual_number(chars))
-			printf("The input: <%s> isn't an actual number \n", chars);
+		{
+			printf("All inputs must be valid digits\n");
+			exit(EXIT_FAILURE);
+		}
 		if (!is_number_within_bounds(chars))
-			printf("The number <%s> isn't within bounds \n", chars);
+		{
+			printf("The input provided was out of bounds\n");
+			exit(EXIT_FAILURE);
+		}
 		data = ft_atoi(chars);
 		end_insert(head, data);
 		chars = ft_strtok(NULL, ' ');
