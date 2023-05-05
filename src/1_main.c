@@ -25,5 +25,6 @@ int	main(int argc, char **argv)
 	stack_a = stack_a_init(argc, argv, &stack_a);
 	stack_b = NULL;
 	algorithms(&stack_a, &stack_b);
+	free_list(stack_a);
 	return (0);
 }
