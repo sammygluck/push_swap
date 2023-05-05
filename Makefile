@@ -6,6 +6,7 @@ SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
 TARGET = push_swap
+FT_PRINTF_DIR = ft_printf
 
 # Source Files
 SRC = $(wildcard $(SRCDIR)/*.c)
@@ -15,18 +16,30 @@ OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 # Targets
 all: $(BINDIR)/$(TARGET)
 
-$(BINDIR)/$(TARGET): $(OBJ)
-	$(CC) $(CFLAGS) -o $@ $^
+$(BINDIR)/$(TARGET): $(OBJ) $(FT_PRINTF_DIR)/libftprintf.a
+	@mkdir -p $(BINDIR)
+	$(CC) $(CFLAGS) -o $@ $^ -L$(FT_PRINTF_DIR) -lftprintf
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
+	@mkdir -p $(OBJDIR)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
-clean:
+$(FT_PRINTF_DIR)/libftprintf.a:
+	$(MAKE) -C $(FT_PRINTF_DIR)
+
+clean: ft_printf_clean
 	rm -f $(OBJ) 
 
-fclean: clean
+ft_printf_clean:
+	$(MAKE) -C $(FT_PRINTF_DIR) clean
+
+fclean: clean ft_printf_fclean
 	rm -f $(BINDIR)/$(TARGET)
+	-rmdir $(OBJDIR) $(BINDIR)
+
+ft_printf_fclean:
+	$(MAKE) -C $(FT_PRINTF_DIR) fclean
 
 re: fclean all
 
-.PHONY: all clean re fclean
+.PHONY: all clean re fclean ft_printf_clean ft_printf_fclean

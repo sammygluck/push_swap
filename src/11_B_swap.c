@@ -29,7 +29,7 @@ void	sa(t_node **stack_a)
 	if (!*stack_a || !(*stack_a)->next)
 		return ;
 	swap(stack_a);
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	sb(t_node **stack_b)
@@ -37,7 +37,7 @@ void	sb(t_node **stack_b)
 	if (!*stack_b || !(*stack_b)->next)
 		return ;
 	swap(stack_b);
-	printf("sb\n");
+	ft_printf("sb\n");
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
@@ -46,5 +46,5 @@ void	ss(t_node **stack_a, t_node **stack_b)
 		return ;
 	swap(stack_a);
 	swap(stack_b);
-	printf("ss\n");
+	ft_printf("ss\n");
 }

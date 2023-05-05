@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("USAGE: %s <\" string of numbers \">\n", argv[0]);
+		ft_printf("USAGE: %s <\" string of numbers \">\n", argv[0]);
 		return (1);
 	}
 	stack_a = stack_a_init(argc, argv, &stack_a);

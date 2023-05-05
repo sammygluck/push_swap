@@ -24,12 +24,12 @@ t_node *two_argument_parser(char *string, t_node **head)
 	{
 		if (!is_actual_number(chars))
 		{
-			printf("All inputs must be valid digits\n");
+			ft_printf("All inputs must be valid digits\n");
 			exit(EXIT_FAILURE);
 		}
 		if (!is_number_within_bounds(chars))
 		{
-			printf("The input provided was out of bounds\n");
+			ft_printf("The input provided was out of bounds\n");
 			exit(EXIT_FAILURE);
 		}
 		data = ft_atoi(chars);
@@ -50,12 +50,12 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 	{	
 		if (!is_actual_number(argv[i]))
 		{
-			printf("All inputs must be valid digits\n");
+			ft_printf("All inputs must be valid digits\n");
 			exit(EXIT_FAILURE);
 		}
 		if (!is_number_within_bounds(argv[i]))
 		{
-			printf("The input provided was out of bounds\n");
+			ft_printf("The input provided was out of bounds\n");
 			exit(EXIT_FAILURE);
 		}
 		data = ft_atoi(argv[i]);
@@ -78,7 +78,7 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 	//check for duplicates
 	if (has_duplicates(head))
 	{
-		printf("The input has duplicates\n");
+		ft_printf("The input has duplicates\n");
 		exit(EXIT_FAILURE);
 	}
 	return (stack_a);

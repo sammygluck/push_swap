@@ -80,7 +80,7 @@ void	print_list(t_node *head)
 
 	while (current != NULL)
 	{
-		printf("%d -> ", current->data);
+		ft_printf("%d -> ", current->data);
 		current = current->next;
 	}
 	printf("NULL\n");

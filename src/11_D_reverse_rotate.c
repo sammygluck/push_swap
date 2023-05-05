@@ -34,7 +34,7 @@ void	rra(t_node **stack)
 	if (!*stack || !(*stack)->next)
 		return ;
 	reverse_rotate(stack);
-	printf("rra\n");
+	ft_printf("rra\n");
 }
 
 void	rrb(t_node **stack)
@@ -42,7 +42,7 @@ void	rrb(t_node **stack)
 	if (!*stack || !(*stack)->next)
 		return ;
 	reverse_rotate(stack);
-	printf("rrb\n");
+	ft_printf("rrb\n");
 }
 
 void	rrr(t_node **stack_a, t_node **stack_b)
@@ -51,5 +51,5 @@ void	rrr(t_node **stack_a, t_node **stack_b)
 		return ;
 	reverse_rotate(stack_a);
 	reverse_rotate(stack_b);
-	printf("rrr\n");
+	ft_printf("rrr\n");
 }
