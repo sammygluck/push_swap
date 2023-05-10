@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   radix.c                                            :+:      :+:    :+:   */
+/*   6_radix.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 17:07:26 by sgluck            #+#    #+#             */
-/*   Updated: 2023/04/25 15:34:59 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/05/10 18:31:59 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ int	bit_length(int max)
 void	radix(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*current;
-	int		max;
 	int		i;
 	int		j;
+	int		stack_len;
 
 	normalize_stack(stack_a);
-	max = find_max(*stack_a);
+	stack_len = stack_length(*stack_a);
 	i = 0;
-	while (i < bit_length(max))
+	while (i < bit_length(find_max(*stack_a)))
 	{
 		j = 0;
-		while (j < max)
+		while (j < stack_len)
 		{
 			current = *stack_a;
 			if (((current->data >> i) & 1) == 1)

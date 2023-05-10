@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   4_algorithms.c                                     :+:      :+:    :+:   */
+/*   1_main.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/25 15:36:39 by sgluck            #+#    #+#             */
-/*   Updated: 2023/05/10 09:27:21 by sgluck           ###   ########.fr       */
+/*   Created: 2023/04/23 12:24:58 by sgluck            #+#    #+#             */
+/*   Updated: 2023/05/10 18:27:50 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	algorithms(t_node **stack_a, t_node **stack_b)
+int	main(int argc, char **argv)
 {
-	int		stack_size;
+	t_node	*stack_a;
+	t_node	*stack_b;
 
-	stack_size = stack_length(*stack_a);
-	if (is_sorted(*stack_a) || stack_size == 1)
-		return ;
-	if (stack_size == 2)
-		sa(stack_a);
-	if (stack_size > 2 && stack_size < 12)
-		small_stack_sort(stack_a, stack_b);
-	if (stack_size > 12)
-		radix(stack_a, stack_b);
+	if (argc < 2)
+	{
+		ft_printf("USAGE: %s <\" string of numbers \">\n", argv[0]);
+		return (1);
+	}
+	stack_a = stack_a_init(argc, argv, &stack_a);
+	stack_b = NULL;
+	algorithms(&stack_a, &stack_b);
+	//print_list(stack_a);
+	free_list(stack_a);
+	return (0);
 }

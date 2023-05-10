@@ -28,14 +28,14 @@ $(FT_PRINTF_DIR)/libftprintf.a:
 	$(MAKE) -C $(FT_PRINTF_DIR)
 
 clean: ft_printf_clean
-	rm -f $(OBJ) 
+	rm -rf $(OBJ) 
 
 ft_printf_clean:
 	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 fclean: clean ft_printf_fclean
-	rm -f $(BINDIR)/$(TARGET)
-	-rmdir $(OBJDIR) $(BINDIR)
+	rm -rf $(BINDIR)/$(TARGET)
+	rm -rf $(OBJDIR) $(BINDIR)
 
 ft_printf_fclean:
 	$(MAKE) -C $(FT_PRINTF_DIR) fclean
