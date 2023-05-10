@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algorithms.c                                       :+:      :+:    :+:   */
+/*   4_algorithms.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:36:39 by sgluck            #+#    #+#             */
-/*   Updated: 2023/04/25 15:44:38 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/05/10 09:27:21 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	algorithms(t_node **stack_a, t_node **stack_b)
 {
 	int		stack_size;
 
-	stack_size = stack_length(*stack_a);	
+	stack_size = stack_length(*stack_a);
 	if (is_sorted(*stack_a) || stack_size == 1)
 		return ;
 	if (stack_size == 2)

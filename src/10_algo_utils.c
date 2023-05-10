@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   10_algo_utils.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/10 09:24:48 by sgluck            #+#    #+#             */
+/*   Updated: 2023/05/10 09:26:43 by sgluck           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 //This checks the stack length
@@ -32,18 +44,18 @@ int	is_sorted(t_node *head)
 	return (1);
 }
 
-int     find_min(t_node *stack)
+int	find_min(t_node *stack)
 {
-    int     min;
-    t_node  *current;
+	t_node	*current;
+	int		min;
 
-    current = stack;
-    min = current->data;
-    while (current)
-    {
-        if (current->data < min)
-            min = current->data;
-        current = current->next;
-    }
-    return (min);
+	current = stack;
+	min = current->data;
+	while (current)
+	{
+		if (current->data < min)
+			min = current->data;
+		current = current->next;
+	}
+	return (min);
 }

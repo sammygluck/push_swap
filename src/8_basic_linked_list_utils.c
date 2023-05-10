@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic_linked_list_utils.c                          :+:      :+:    :+:   */
+/*   8_basic_linked_list_utils.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 13:26:33 by sgluck            #+#    #+#             */
-/*   Updated: 2023/04/23 14:01:44 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/05/10 09:12:10 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void free_list(t_node *head)
+void	free_list(t_node *head)
 {
 	t_node	*current;
 	t_node	*next_node;
 
 	current = head;
-	while(current != NULL)
+	while (current != NULL)
 	{
 		next_node = current->next;
 		free (current);
@@ -76,8 +76,9 @@ void	end_insert(t_node **head, int data)
 
 void	print_list(t_node *head)
 {
-	t_node *current = head;
+	t_node	*current;
 
+	current = head;
 	while (current != NULL)
 	{
 		ft_printf("%d -> ", current->data);

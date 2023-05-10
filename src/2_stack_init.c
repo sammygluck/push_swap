@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_init.c                                       :+:      :+:    :+:   */
+/*   2_stack_init.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 15:40:42 by sgluck            #+#    #+#             */
-/*   Updated: 2023/04/25 15:41:06 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/05/10 09:13:21 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-t_node *two_argument_parser(char *string, t_node **head)
+t_node	*two_argument_parser(char *string, t_node **head)
 {
 	char	*chars;
 	int		data;
@@ -33,7 +32,7 @@ t_node *two_argument_parser(char *string, t_node **head)
 	return (*head);
 }
 
-t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
+t_node	*multiple_argument_parser(int argc, char **argv, t_node **head)
 {
 	int		i;
 	int		data;
@@ -55,15 +54,13 @@ t_node *multiple_argument_parser(int argc, char **argv, t_node **head)
 
 t_node	*stack_a_init(int argc, char **argv, t_node **head)
 {
-	t_node *stack_a;
+	t_node	*stack_a;
 
 	stack_a = NULL;
 	if (argc == 2)
 		stack_a = two_argument_parser(argv[1], head);
 	else
 		stack_a = multiple_argument_parser(argc, argv, head);
-
-	//check for duplicates
 	if (has_duplicates(head))
 	{
 		ft_printf("The input has duplicates\n");
@@ -79,4 +76,3 @@ void	init_error(t_node *head)
 		free_list(head);
 	exit(EXIT_FAILURE);
 }
-
