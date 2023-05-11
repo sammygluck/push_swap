@@ -6,7 +6,7 @@
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/23 16:53:45 by sgluck            #+#    #+#             */
-/*   Updated: 2023/05/10 09:39:39 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/05/11 13:23:29 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ void	small_stack_sort(t_node **stack_a, t_node **stack_b);
 void	simplify_stack(t_node **stack, int *array);
 void	radix(t_node **stack_a, t_node **stack_b);
 void	algorithms(t_node **stack_a, t_node **stack_b);
+void	three_stack(t_node **stack_a);
 char	*ft_strtok(char *str, char delim);
 int		count_numbers(char *string);
 int		ft_atoi(const char *str);

@@ -6,13 +6,12 @@
 /*   By: sgluck <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 09:24:48 by sgluck            #+#    #+#             */
-/*   Updated: 2023/05/10 09:26:43 by sgluck           ###   ########.fr       */
+/*   Updated: 2023/05/11 12:56:40 by sgluck           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-//This checks the stack length
 int	stack_length(t_node *stack)
 {
 	int	i;
