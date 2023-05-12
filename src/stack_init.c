@@ -62,10 +62,7 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 	else
 		stack_a = multiple_argument_parser(argc, argv, head);
 	if (has_duplicates(head))
-	{
-		ft_printf("The input has duplicates\n");
-		exit(EXIT_FAILURE);
-	}
+		init_error(*head);
 	return (stack_a);
 }
 
