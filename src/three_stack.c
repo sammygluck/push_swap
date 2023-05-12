@@ -37,6 +37,6 @@ void	three_stack(t_node **stack_a)
 	}
 	else if (first == 1 && second == 0 && third == 2)
 		sa(stack_a);
-	else if (first == && second == && third == )
+	else if (first == 1 && second == 2 && third == 0)
 		rra(stack_a);	
 }
