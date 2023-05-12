@@ -71,7 +71,7 @@ t_node	*stack_a_init(int argc, char **argv, t_node **head)
 
 void	init_error(t_node *head)
 {
-	ft_printf("error\n");
+	ft_printf("Error\n");
 	if (head != NULL)
 		free_list(head);
 	exit(EXIT_FAILURE);

@@ -18,10 +18,7 @@ int	main(int argc, char **argv)
 	t_node	*stack_b;
 
 	if (argc < 2)
-	{
-		ft_printf("USAGE: %s <\" string of numbers \">\n", argv[0]);
 		return (1);
-	}
 	stack_a = stack_a_init(argc, argv, &stack_a);
 	stack_b = NULL;
 	algorithms(&stack_a, &stack_b);
