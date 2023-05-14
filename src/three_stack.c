@@ -22,7 +22,6 @@ void	three_stack(t_node **stack_a)
 	first = (*stack_a)->data;
 	second = (*stack_a)->next->data;
 	third = (*stack_a)->next->next->data;
-	ft_printf("first %i; second %i; third %i \n", first, second, third);
 	if (first == 2 && second == 0 && third == 1)
 		ra(stack_a);
 	else if (first == 2 && second == 1 && third == 0)

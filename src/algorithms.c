@@ -25,6 +25,6 @@ void	algorithms(t_node **stack_a, t_node **stack_b)
 		three_stack(stack_a);
 	else if (stack_size > 2 && stack_size < 12)
 		small_stack_sort(stack_a, stack_b);
-	else if (stack_size > 12)
+	else if (stack_size >= 12)
 		radix(stack_a, stack_b);
 }
