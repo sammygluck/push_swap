@@ -51,7 +51,7 @@ int	is_actual_number(const char *str)
 		i++;
 	if (str[i] == '-' || str[i] == '+')
 		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+	while (str[i])
 	{
 		number = str[i];
 		if (!ft_isdigit(number))
