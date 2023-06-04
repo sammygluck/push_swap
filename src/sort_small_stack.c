@@ -64,7 +64,7 @@ void	small_stack_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	min;
 
-	while (!is_sorted(*stack_a))
+	while (!is_sorted(*stack_a) && stack_length(*stack_a) != 3)
 	{
 		min = find_min(*stack_a);
 		if (is_ra_shortest_way(*stack_a, min))
@@ -75,6 +75,8 @@ void	small_stack_sort(t_node **stack_a, t_node **stack_b)
 			break ;
 		pb(stack_a, stack_b);
 	}
+	if (stack_length(*stack_a) == 3)
+		three_stack(stack_a);
 	while (*stack_b != NULL)
 		pa(stack_a, stack_b);
 }
