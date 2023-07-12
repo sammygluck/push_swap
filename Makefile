@@ -1,11 +1,11 @@
-# Variables
+# VariablesFiles
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 SRCDIR = src
 OBJDIR = obj
 BINDIR = bin
-TARGET = push_swap
+NAME = push_swap
 FT_PRINTF_DIR = ft_printf
 
 # Source Files
@@ -14,9 +14,9 @@ HDRS = push_swap.h
 OBJ = $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
 
 # Targets
-all: $(BINDIR)/$(TARGET)
+all: $(BINDIR)/$(NAME)
 
-$(BINDIR)/$(TARGET): $(OBJ) $(FT_PRINTF_DIR)/libftprintf.a
+$(BINDIR)/$(NAME): $(OBJ) $(FT_PRINTF_DIR)/libftprintf.a
 	@mkdir -p $(BINDIR)
 	$(CC) $(CFLAGS) -o $@ $^ -L$(FT_PRINTF_DIR) -lftprintf
 
@@ -34,7 +34,7 @@ ft_printf_clean:
 	$(MAKE) -C $(FT_PRINTF_DIR) clean
 
 fclean: clean ft_printf_fclean
-	rm -rf $(BINDIR)/$(TARGET)
+	rm -rf $(BINDIR)/$(NAME)
 	rm -rf $(OBJDIR) $(BINDIR)
 
 ft_printf_fclean:
